@@ -7,10 +7,23 @@ var bcrypt = require("bcryptjs");
 const app = express();
 
 var corsOptions = {
-  origin: "https://cmon-backend.onrender.com/",
+  origin: "https://cmon-backend.onrender.com",
 };
 
-app.use(cors(corsOptions));
+app.use(function (req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
+  res.setHeader("Access-Control-Allow-Credentials", true);
+
+  next();
+});
 
 // parse requests of content-type - application/json
 app.use(express.json());
