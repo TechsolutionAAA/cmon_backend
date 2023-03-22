@@ -36,7 +36,7 @@ const Role = db.role;
 const User = db.user;
 db.mongoose
   .connect(
-    "mongodb+srv://cmon:cmon@cmondb.vfrm2t1.mongodb.net/?retryWrites=true&w=majority",
+    "mongodb+srv://robin:robin@cluster0.zksqaj9.mongodb.net/?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
