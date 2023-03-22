@@ -7,7 +7,7 @@ var bcrypt = require("bcryptjs");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://cmon-backend.onrender.com/",
 };
 
 app.use(cors(corsOptions));
