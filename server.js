@@ -22,10 +22,13 @@ const db = require("./app/models");
 const Role = db.role;
 const User = db.user;
 db.mongoose
-  .connect("mongodb+srv://cmon:cmon@cmondb.vfrm2t1.mongodb.net/test", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://cmon:cmon@cmondb.vfrm2t1.mongodb.net/?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initial();
